@@ -10,7 +10,7 @@ function guessingnumber {
 	read guess
 	while [[ $guess != $number_of_files ]]
 	do
-		if [[ $guess =~ [^0-9]+ ]]
+		if [[ -z "$guess" ]] || [[ $guess =~ [^0-9] ]]
 		then
 			echo "You did not enter a number, please try again"
 			guessingnumber
